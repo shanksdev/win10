@@ -1,0 +1,11 @@
+$defaultResolutionWidth: 100vw;
+$defaultResolutionHeight: 100vh;
+.desktop-container{
+  display: flex;
+  height: $defaultResolutionHeight;
+  width: $defaultResolutionWidth;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}

@@ -1,0 +1,49 @@
+@import "../../../variable";
+.task-bar{
+  height:$taskBarHeight;
+  width:100vw;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom:0;
+  left:0;
+  align-items: stretch;
+  .task-bar-bg{
+    height:100%;
+    width:100%;
+    background-color:rgba(0,0,0,0.7);
+    filter: blur(0.7px);
+    position: absolute;
+    display: block;
+  }
+  .task-bar-contents{
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .pinned-icons{
+    display: flex;
+    align-items: center;
+    img{
+      width:28px;
+      height:28px;
+      margin:0 20px 0 0;
+      &:first-child{
+        width:20px;
+        height:20px;
+        margin-left:15px;
+      }
+    }
+  }
+  .system-tray{
+    display: flex;
+    align-items: center;
+    img{
+      width:16px;
+      height:16px;
+      margin:0 8px 0 0;
+    }
+    // align-self: flex-end;
+  }
+}

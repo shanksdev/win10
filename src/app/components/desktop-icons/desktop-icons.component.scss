@@ -1,0 +1,39 @@
+@import "../../../variable";
+$iconHeight:44px;
+$iconWidth:44px;
+$shortcutWrapperWidth:64px;
+$shortcutWrapperHeight:80px;
+.shortcut-icons-space-container{
+  display: flex;
+  align-self: flex-start;
+  min-width:$iconWidth + 10;
+  margin-left: 10px;
+  margin-top: 10px;
+  flex-direction: column;
+  height: calc(100% - (#{$taskBarHeight} + 10px));
+  .shortcut-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0 15px 15px 0;
+    color: #fff;
+    width:$shortcutWrapperWidth;
+    height:$shortcutWrapperHeight;
+    // justify-content: center;
+    img{
+      width:$iconWidth;
+      height:$iconHeight;
+    }
+    h5{
+      margin:5px 0 0 0;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-align: center;
+      width:$shortcutWrapperWidth;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+  }
+}
