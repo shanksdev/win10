@@ -1,11 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Constants } from '../constants';
-import { Shortcut } from '../models';
+import { Shortcut, IPosition, IContextMenuOptions } from '../models';
 
 @Component({
   selector: 'app-desktop',
   templateUrl: './desktop.component.html',
-  styleUrls: ['./desktop.component.scss']
+  styleUrls: ['./desktop.component.scss'],
 })
 export class DesktopComponent implements OnInit {
 
@@ -13,11 +13,41 @@ export class DesktopComponent implements OnInit {
   onContextMenu(e:any){
     e.preventDefault();
     console.log('on right click event = ', e);
+    this.menuPostion.x = e.clientX;
+    this.menuPostion.y = e.clientY;
+    this.toggleContextMenu();
   }
 
   icons:any = Constants.iconPaths;
   wallpaper:string = this.icons.desktop.DEAULT_WALLPAPER;
   initialShortcuts:Array<Shortcut>=[];
+  showMenu:boolean = false;
+  menuPostion:IPosition = {
+    x:0,
+    y:0
+  };
+  menuOptions:IContextMenuOptions[] = [
+    {
+      id:'1',
+      label:'Option 1',
+      containsSubOptions:false
+    },
+    {
+      id:'2',
+      label:'Option 2',
+      containsSubOptions:false
+    },
+    {
+      id:'3',
+      label:'Option 3',
+      containsSubOptions:false
+    },
+    {
+      id:'4',
+      label:'Option 4',
+      containsSubOptions:false
+    },
+  ]
 
   constructor() { }
 
@@ -46,8 +76,8 @@ export class DesktopComponent implements OnInit {
     ]
   }
 
-  openContextMenu(){
+  toggleContextMenu(){
     console.log('open context menu');
+    this.showMenu = !this.showMenu;
   }
-
 }

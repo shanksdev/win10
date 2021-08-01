@@ -1,0 +1,8 @@
+<div class="context-menu-container" [ngStyle]="{top: config.position.y+'px', left: config.position.x+'px'}">
+  <ul class="options">
+    <li *ngFor="let option of config.options">
+      <p>{{option.label}}</p>
+    </li>
+    <li class="separator"></li>
+  </ul>
+</div>
