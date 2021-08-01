@@ -11,12 +11,14 @@ $shortcutWrapperHeight:80px;
   margin-top: 10px;
   flex-direction: column;
   height: calc(100% - (#{$taskBarHeight} + 10px));
+  flex-wrap: wrap;
   .shortcut-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin:0 15px 15px 0;
     color: #fff;
+    padding: 5px;
     width:$shortcutWrapperWidth;
     height:$shortcutWrapperHeight;
     // justify-content: center;
