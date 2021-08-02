@@ -12,7 +12,9 @@
     height:100%;
     width:100%;
     background-color:rgba(0,0,0,0.7);
-    filter: blur(0.7px);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    -moz-backdrop-filter: blur(7px);
     position: absolute;
     display: block;
   }

@@ -1,6 +1,10 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Constants } from '../constants';
 import { Shortcut, IPosition, IContextMenuOptions } from '../models';
+import { Store } from '@ngrx/store';
+import { Theme, IAppState, IAppThemeState } from 'src/app/app.models';
+import * as AppActions from 'src/app/store/app.actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-desktop',
@@ -22,6 +26,7 @@ export class DesktopComponent implements OnInit {
   wallpaper:string = this.icons.desktop.DEAULT_WALLPAPER;
   initialShortcuts:Array<Shortcut>=[];
   showMenu:boolean = false;
+  showMenuObservable!:Observable<IAppThemeState>;
   menuPostion:IPosition = {
     x:0,
     y:0
@@ -49,10 +54,11 @@ export class DesktopComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(public store:Store<IAppState>) { }
 
   ngOnInit(): void {
     this.loadShortcutIcons();
+    this.showMenuObservable = this.store.select('appTheme')
   }
 
   loadShortcutIcons(){
@@ -79,5 +85,11 @@ export class DesktopComponent implements OnInit {
   toggleContextMenu(){
     console.log('open context menu');
     this.showMenu = !this.showMenu;
+    this.store.dispatch(AppActions.DesktopShowHideMenu({payload: this.showMenu}));
+  }
+
+  onThemeChange(newTheme:Theme){
+    console.log('changing theme');
+    this.store.dispatch(AppActions.UpdateTheme({payload:newTheme}));
   }
 }
