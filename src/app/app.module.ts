@@ -5,7 +5,7 @@ import { StoreModule, ActionReducerMap, Action } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
-import * as appThemeReducer from './store/app.reducer';
+import * as appReducers from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import * as appThemeReducer from './store/app.reducer';
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-    StoreModule.forRoot({appTheme: appThemeReducer.reducer})
+    StoreModule.forRoot({appTheme: appReducers.themeReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

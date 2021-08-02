@@ -6,5 +6,5 @@
   <button (click)="onThemeChange('system')">Change Theme to System</button> -->
   <app-desktop-icons [shortcuts]="initialShortcuts"></app-desktop-icons>
   <app-task-bar></app-task-bar>
-  <app-context-menu *ngIf="showMenu" [config]="{position:menuPostion, options:menuOptions}"></app-context-menu>
+  <app-context-menu *ngIf="(showMenuObservable | async)?.desktopMenuVisible" [config]="{position:menuPostion, options:menuOptions}"></app-context-menu>
 </div>

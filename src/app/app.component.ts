@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Theme } from './app.models';
+import { Theme, IAppThemeState, IAppState } from './app.models';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,8 @@ import { Theme } from './app.models';
 })
 export class AppComponent implements OnInit {
   title = 'win10';
-  currentTheme!:Observable<{theme: Theme}>;
-  constructor(public store:Store<{appTheme: {theme:Theme}}>){
+  currentTheme!:Observable<IAppThemeState>;
+  constructor(public store:Store<IAppState>){
   }
 
   ngOnInit(){
