@@ -27,14 +27,26 @@
   .pinned-icons{
     display: flex;
     align-items: center;
-    img{
-      width:28px;
-      height:28px;
-      margin:0 20px 0 0;
+    .img-wrapper{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      transition:all ease-in 0.2s;
+      img{
+        width:28px;
+        height:28px;
+        padding:0 10px;
+      }
       &:first-child{
-        width:20px;
-        height:20px;
-        margin-left:15px;
+        img{
+          width:20px;
+          height:20px;
+          padding-right:15px;
+        }
+      }
+      &:hover{
+        background-color: rgba(140, 140, 140, .34);
+        transition:all ease-in 0.2s;
       }
     }
   }
