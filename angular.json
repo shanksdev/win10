@@ -18,7 +18,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/win10",
             "index": "src/index.html",
@@ -34,7 +34,10 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "extraWebpackConfig": "webpack.config.js"
+            "extraWebpackConfig": "webpack.config.js",
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
@@ -67,7 +70,7 @@
           }
         },
         "serve": {
-          "builder": "ngx-build-plus:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "win10:build",
             "extraWebpackConfig": "webpack.config.js"
@@ -85,7 +88,7 @@
           }
         },
         "test": {
-          "builder": "ngx-build-plus:karma",
+          "builder": "@angular-builders/custom-webpack:karma",
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
@@ -99,7 +102,10 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "extraWebpackConfig": "webpack.config.js"
+            "extraWebpackConfig": "webpack.config.js",
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
           }
         },
         "lint": {
