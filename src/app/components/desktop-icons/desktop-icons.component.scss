@@ -2,7 +2,7 @@
 $iconHeight:44px;
 $iconWidth:44px;
 $shortcutWrapperWidth:64px;
-$shortcutWrapperHeight:80px;
+$shortcutWrapperHeight:90px;
 .shortcut-icons-space-container{
   display: flex;
   align-self: flex-start;
@@ -16,7 +16,7 @@ $shortcutWrapperHeight:80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:0 15px 15px 0;
+    margin:0 15px 0 0;
     color: #fff;
     padding: 5px;
     width:$shortcutWrapperWidth;
@@ -27,15 +27,16 @@ $shortcutWrapperHeight:80px;
       height:$iconHeight;
     }
     h5{
-      margin:5px 0 0 0;
-      font-size: 11px;
-      letter-spacing: 0.5px;
-      text-align: center;
-      width:$shortcutWrapperWidth;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
+      @apply text-xs text-center line-clamp-2 overflow-ellipsis;
+      // margin:5px 0 0 0;
+      // font-size: 11px;
+      // letter-spacing: 0.5px;
+      // text-align: center;
+      // width:$shortcutWrapperWidth;
+      // display: -webkit-box;
+      // -webkit-box-orient: vertical;
+      // -webkit-line-clamp: 2;
+      // overflow: hidden;
     }
   }
 }
