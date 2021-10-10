@@ -11,9 +11,15 @@ export class TaskBarComponent implements OnInit {
   // @ViewChild('taskBar') taskBar: ElementRef;
 
   icons:any = Constants.iconPaths;
+  isStartMenuOpen = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onStartMenuClick(){
+    console.log('start menu click');
+    this.isStartMenuOpen = !this.isStartMenuOpen;
   }
 
 }

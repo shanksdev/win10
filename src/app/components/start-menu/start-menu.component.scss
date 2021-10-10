@@ -1,0 +1,66 @@
+.start-menu-container{
+  @apply flex absolute bottom-11 left-0 z-10 pr-3 pt-3 shadow-md text-white;
+  max-height: 500px;
+  background-color:rgba(0,0,0,0.7);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  -moz-backdrop-filter: blur(7px);
+
+  .left{
+    @apply flex flex-col items-center;
+    img{
+      width:28px;
+      height:28px;
+      @apply m-3;
+      // &:first-child{
+
+      // }
+    }
+    .taskbar-btn-wrapper{
+      @apply flex items-center transition-all ease-out delay-200;
+      height: 100%;
+      background:transparent;
+      &:hover{
+        @apply transition-all ease-in delay-200;
+        background: rgba(255,255,255,0.12);
+      }
+    }
+  }
+
+  .middle{
+    max-height: inherit;
+    @apply overflow-y-hidden overflow-x-hidden mb-3;
+    &:hover{
+      @apply overflow-y-auto;
+    }
+    ul.apps-list{
+      @apply list-none inline-block w-48;
+      li{
+        @apply h-9 flex items-center text-sm w-max pr-3 pl-3 truncate;
+        width:100%;
+        &:hover{
+          @apply hover:border-gray-400;
+        }
+      }
+    }
+  }
+
+  .right{
+    h4{
+      @apply text-sm mb-3;
+    }
+    .app-tiles{
+      @apply grid grid-cols-3 gap-1;
+      .tile{
+        @apply text-sm p-3 flex-1 w-24 h-24;
+        background: rgba(255,255,255,0.12);
+        img{
+          @apply w-14 h-14;
+        }
+        .app-name{
+          @apply text-sm;
+        }
+      }
+    }
+  }
+}

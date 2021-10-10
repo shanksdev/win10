@@ -2,14 +2,27 @@
 <div #taskBar class="task-bar">
   <div class="task-bar-bg"></div>
   <div class="task-bar-contents">
-    <!-- Pinned Icons -->
-    <div class="pinned-icons flex items-center">
-      <!-- Fixed -->
-      <img [src]="icons.taskbar.WIN_LOGO">
-      <img [src]="icons.taskbar.MS_STORE">
-      <img [src]="icons.common.EDGE_BROWSER">
+    <!-- Left Side -->
+    <div class="flex items-center">
+      <!-- Start Button -->
+      <div class="pinned-icons flex items-stretch">
+        <div class="taskbar-btn-wrapper" (click)="onStartMenuClick()">
+          <img [src]="icons.taskbar.WIN_LOGO">
+        </div>
+        <app-start-menu *ngIf="isStartMenuOpen"></app-start-menu>
+      </div>
+      <!-- Pinned Icons -->
+      <div class="pinned-icons flex items-center">
+        <!-- Fixed -->
+        <div class="taskbar-btn-wrapper">
+          <img [src]="icons.taskbar.MS_STORE">
+        </div>
+        <div class="taskbar-btn-wrapper">
+          <img [src]="icons.common.EDGE_BROWSER">
+        </div>
+      </div>
     </div>
-    <!-- System Tray -->
+    <!-- Right Side / System Tray -->
     <div class="system-tray">
       <img [src]="icons.taskbar.WIN_LOGO">
       <img [src]="icons.taskbar.MS_STORE">

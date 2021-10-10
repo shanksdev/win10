@@ -27,6 +27,7 @@
   .pinned-icons{
     // display: flex;
     // align-items: center;
+    height:100%;
     img{
       width:28px;
       height:28px;
@@ -35,6 +36,17 @@
         width:20px;
         height:20px;
         margin-left:15px;
+      }
+    }
+    .taskbar-btn-wrapper{
+      @apply flex;
+      height: 100%;
+      align-items: center;
+      background:transparent;
+      transition: all ease-out 0.2s;
+      &:hover{
+        background: rgba(255,255,255,0.12);
+        transition: all ease-in 0.2s;
       }
     }
   }
